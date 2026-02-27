@@ -95,6 +95,8 @@ SUPABASE_ANON_KEY = safe_secret("SUPABASE_ANON_KEY", "") or safe_secret("SUPABAS
 APP_PEPPER = safe_secret("APP_PEPPER", "CHANGE_ME_PEPPER")
 ORGANIZER_MASTER_KEY = safe_secret("ORGANIZER_MASTER_KEY", "")
 
+st.info(f"Connected SUPABASE_URL: {SUPABASE_URL}")
+
 def supabase_ready() -> bool:
     return SUPA_OK and bool(SUPABASE_URL) and bool(SUPABASE_ANON_KEY)
 
